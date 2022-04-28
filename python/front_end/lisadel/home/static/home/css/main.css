@@ -105,12 +105,19 @@ text_sm
 
 .home_nav_item,.nav-link
 {
-    border-bottom: 5px solid rgba(0, 0, 0, 0.1) !important;
+    border-bottom: 5px solid #343a40 !important
 }
 
 .home_nav_item:hover,.nav-link:hover
 {
     border-bottom: 5px solid #17a2b8 !important;
+}
+
+.last_min_tours
+{
+    height: 50px;
+    width: 50px;
+    overflow: hidden;
 }
 
 .dropdown-item{
