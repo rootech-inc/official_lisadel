@@ -19,5 +19,6 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
-    path('', views.index, name='landing')
+    path('', views.index, name='landing'),
+    path('tour/<event>',views.event_view,name='view_event')
 ]

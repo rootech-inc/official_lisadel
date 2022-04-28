@@ -1,0 +1,188 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block body %}
+
+
+        <div>
+            <div class="container mt-5">
+                <div class="row">
+                    <div class="col-sm-10 bg-white p-0">
+
+                        <!-- TOP DETAILS -->
+                        <nav class="navbar navbar-dark bg-primary mb-2">
+                            <h3 class="m-0 font-weight-bolder text-light">
+                                Event Name
+                            </h3>
+                        </nav>
+
+
+                        <!-- IMAGES -->
+                        <div class="w-100 bg-dark p-2" style="height: 50vh">
+                            <div id="demo" class="carousel slide h-100 rounded_c" data-ride="carousel">
+
+                        <!-- Indicators -->
+                        <ul class="carousel-indicators">
+                            <li data-target="#demo" data-slide-to="0" class="active"></li>
+                            <li data-target="#demo" data-slide-to="1"></li>
+                            <li data-target="#demo" data-slide-to="2"></li>
+                            <li data-target="#demo" data-slide-to="3"></li>
+                            <li data-target="#demo" data-slide-to="4"></li>
+                        </ul>
+
+                        <!-- The slideshow -->
+                        <div class="carousel-inner h-100 rounded_c">
+
+                            <!-- GALLERY -->
+                            <div class="carousel-item h-100 back_img active b" style="background: url('{% static 'home/asssets/slides/4.jpg' %}')">
+                                <div class="w-100 h-100 d-flex bg_trans_50 p-5 flex-wrap align-content-end justify-content-start">
+                                    <div class="text-left">
+                                        <h2 class="page-description m-0 text-warning">Location</h2>
+                                        <p class="m-0">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eam si varietatem diceres, intellegerem, ut etiam non dicente te
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item h-100 back_img b" style="background: url('{% static 'home/asssets/slides/1.jpg' %}')">
+                                <div class="w-100 h-100 d-flex bg_trans_50 p-5 flex-wrap align-content-end justify-content-start">
+                                    <div class="text-left">
+                                        <h2 class="page-description m-0 text-warning">Location</h2>
+                                        <p class="m-0">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eam si varietatem diceres, intellegerem, ut etiam non dicente te
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item h-100 back_img b" style="background: url('{% static 'home/asssets/slides/2.jpg' %}')">
+                                <div class="w-100 h-100 d-flex bg_trans_50 p-5 flex-wrap align-content-end justify-content-start">
+                                    <div class="text-left">
+                                        <h2 class="page-description m-0 text-warning">Location</h2>
+                                        <p class="m-0">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eam si varietatem diceres, intellegerem, ut etiam non dicente te
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item h-100 back_img b" style="background: url('{% static 'home/asssets/slides/3.jpg' %}')">
+                                <div class="w-100 h-100 d-flex bg_trans_50 p-5 flex-wrap align-content-end justify-content-start">
+                                    <div class="text-left">
+                                        <h2 class="page-description m-0 text-warning">Location</h2>
+                                        <p class="m-0">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eam si varietatem diceres, intellegerem, ut etiam non dicente te
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item h-100 back_img b" style="background: url('{% static 'home/asssets/slides/6.jpg' %}')">
+                                <div class="w-100 h-100 d-flex bg_trans_50 p-5 flex-wrap align-content-end justify-content-start">
+                                    <div class="text-left">
+                                        <h2 class="page-description m-0 text-warning">Location</h2>
+                                        <p class="m-0">
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Eam si varietatem diceres, intellegerem, ut etiam non dicente te
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <!-- Left and right controls -->
+                        <!--                    <a class="carousel-control-prev" href="#demo" data-slide="prev">-->
+                        <!--                        <span class="carousel-control-prev-icon"></span>-->
+                        <!--                    </a>-->
+                        <!--                    <a class="carousel-control-next" href="#demo" data-slide="next">-->
+                        <!--                        <span class="carousel-control-next-icon"></span>-->
+                        <!--                    </a>-->
+
+                    </div>
+                        </div>
+
+                        <div class="bg-white p-3">
+                            <!-- LOCATION DETAIL -->
+                            <div class="w-100 bg-light mb-2" style="height: 50vh">
+                                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7216.494513923791!2d-0.14080206511232274!3d5.6978421000000035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf8324e8721511%3A0x1edf23527518afe8!2sLakeside%20Marina%20Park!5e1!3m2!1sen!2sgh!4v1651126595811!5m2!1sen!2sgh"  style="border:0; height: 100%; width: 100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            </div>
+
+                            <!-- DETAILS -->
+                            <div class="text-muted">
+                                <p class="text-muted font-weight-bolder">General Information About This Tour</p>
+
+                                <!-- INTRO -->
+                                <small class="text-muted">
+                                    Tales of gladiators, executions, mock sea battles, and the daily life of ancient Romans await you on this fascinating tour of the Colosseum, Roman Forum, and Palatine Hill—all without waiting in line.
+        Standing atop the Opium Hill, gaze down at the Roman Colosseum and use this perfect opportunity to grab some great photographs. Your tour begins as you head down to enter the Colosseum, bypassing the notoriously long lines with your small-group tour. Your guide describes the mind-blowing history of the amphitheater and its importance as one of ancient Rome’s important social centers.
+        From the Palatine Hill, the most well known of the Seven Hills of Rome, you can admire sweeping panoramic views of the Roman Forum and Nero’s Circus Maximus.
+        March along the Via Sacra, or “Sacred Road”—the main street through ancient Rome and the traditional route of Roman Triumph, through to the Roman Forum. End the tour at the temple housing the altar where Julius Caesar was cremated.
+                                </small>
+
+                                <p class="text-muted m-0 mt-2 font-weight-bolder">Day 01</p>
+                                <small>
+                                    Praesent eros turpis, commodo vel justo at, pulvinar mollis eros. Mauris aliquet eu quam id ornare. Morbi ac quam enim. Cras vitae nulla condimentum, semper dolor non, faucibus dolor. Vivamus adipiscing eros quis orci fringilla, sed pretium lectus viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec nec velit non odio aliquam suscipit. Sed non neque faucibus, condimentum lectus at, accumsan enim. Fusce pretium egestas cursus. Etiam consectetur, orci vel rutrum volutpat, odio odio pretium nisiodo tellus libero et urna. Sed commodo ipsum ligula, id volutpat risus vehicula in. Pellentesque non massa eu nibh posuere bibendum non sed enim. Maecenas lobortis nulla sem, vel egestas dui ullamcorper ac.
+                                </small>
+                                <p class="text-muted m-0 mt-2 font-weight-bolder">Day 02</p>
+                                <small>
+                                    Sed scelerisque lectus sit amet faucibus sodales. Proin ut risus tortor. Etiam fermentum tellus auctor, fringilla sapien et, congue quam. In a luctus tortor. Suspendisse eget tempor libero, ut sollicitudin ligula. Nulla vulputate tincidunt est non congue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus at est imperdiet, dapibus ipsum vel, lacinia nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus id interdum lectus, ut elementum elit. Nullam a molestie magna. Praesent eros turpis, commodo vel justo at, pulvinar mollis eros. Mauris aliquet eu quam id ornare. Morbi ac quam enim. Cras vitae nulla condimentum, semper dolor non, faucibus dolor. Vivamus adipiscing eros quis orci fringilla, sed pretium lectus viverra.
+                                </small>
+                                <p class="text-muted m-0 mt-2 font-weight-bolder">Day 03</p>
+                                <small>
+                                    Praesent eros turpis, commodo vel justo at, pulvinar mollis eros. Mauris aliquet eu quam id ornare. Morbi ac quam enim. Cras vitae nulla condimentum, semper dolor non, faucibus dolor. Vivamus adipiscing eros quis orci fringilla, sed pretium lectus viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec nec velit non odio aliquam suscipit. Sed non neque faucibus, condimentum lectus at, accumsan enim. Fusce pretium egestas cursus. Etiam consectetur, orci vel rutrum volutpat, odio odio pretium nisiodo tellus libero et urna. Sed commodo ipsum ligula, id volutpat risus vehicula in. Pellentesque non massa eu nibh posuere bibendum non sed enim. Maecenas lobortis nulla
+                                </small>
+                            </div>
+
+                            <!-- MINI DETAILS AND BOOK -->
+                            <div class="w-100 bg-light p-3 row no-gutters">
+                                <!-- TABLE -->
+                                <div class="col-sm-4 bg-white">
+                                    <table class="table table-sm">
+                                        <tb>
+                                            <tr>
+                                                <td class="text-primary"><small>LOCATION : </small></td>
+                                                <td><small class="text-muted">ACCRA,GHANA</small></td>
+                                            </tr>
+                                            <!--DURATION-->
+                                            <tr>
+                                                <td class="text-primary"><small>DURATION : </small></td>
+                                                <td><small class="text-muted">1 DAY</small></td>
+                                            </tr>
+                                            <!-- SITS -->
+                                            <tr>
+                                                <td class="text-primary"><small>AVAILABLE SEATS : </small></td>
+                                                <td><small class="text-muted">120</small></td>
+                                            </tr>
+                                            <!-- PRICE -->
+                                            <tr>
+                                                <td class="text-primary"><small>PRICE : </small></td>
+                                                <td><small class="text-muted">$100</small></td>
+                                            </tr>
+                                        </tb>
+                                    </table>
+                                </div>
+
+                                <!-- BOOK -->
+                                <div class="col-sm-8 pl-2">
+                                    <div class="border-0 text-muted card p-2 h-100 rounded-0">
+                                        <button class="btn btn-success w-100 h-100">BOOK</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+{% endblock %}
