@@ -11,3 +11,13 @@ def index(request):
 # view single event
 def event_view(request, event):
     return render(request, 'home/event.html')
+
+
+# services
+def services(request):
+    return render(request, 'home/services.html')
+
+
+# about us
+def about_us(request):
+    return render(request,'home/about-us.html')
