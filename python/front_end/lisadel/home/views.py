@@ -25,3 +25,7 @@ def about_us(request):
 
 def service(request,service):
     return render(request, 'home/service.html')
+
+
+def events(request):
+    return render(request, 'home/events.html')

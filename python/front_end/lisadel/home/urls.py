@@ -20,6 +20,8 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='landing'),
+
+    path('tours',views.events,name='tours'),
     path('tour/<event>',views.event_view,name='view_event'),
 
     path('services',views.services,name='services'),

@@ -1,0 +1,195 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block body %}
+
+
+        <div>
+            <div class="container mt-2">
+                <p class="text-muted font-weight-bolder">Upcoming Events</p>
+                <div class="row mb-5">
+
+                    <div class="col-sm-4 p-2">
+                        <div onmouseover="$('#overlay1').show()" onmouseout="$('#overlay1').hide()"  class="card event_card rounded_c p-2 bg-white border-0 custom_shadow">
+                                <span class="status badge badge-light alert-info">
+                                    Accra, Ghana
+                                </span>
+                            <img src="{% static 'home/asssets/slides/5.jpg' %}" class="card-img-top rounded_c custom_shadow" alt="Event Name">
+
+                            <div style="display: none" id="overlay1" class="card-img-overlay h-100 p-2">
+                                <div class="bg_trans_80 w-100 h-100 d-flex flex-wrap align-content-center justify-content-center rounded_c">
+                                    <a href="{% url 'view_event' 'test' %}" class="btn btn-light">Details</a>
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <p class="font-weight-bold">Lorem ipsum</p>
+                                <p class="text-muted m-0 p-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 p-2">
+                        <div onmouseover="$('#overlay2').show()" onmouseout="$('#overlay2').hide()"  class="card event_card rounded_c p-2 bg-white border-0 custom_shadow">
+                                <span class="status badge badge-light alert-info">
+                                    Accra, Ghana
+                                </span>
+                            <img src="{% static 'home/asssets/slides/3.jpg' %}" class="card-img-top rounded_c custom_shadow" alt="Event Name">
+
+                            <div style="display: none" id="overlay2" class="card-img-overlay h-100 p-2">
+                                <div class="bg_trans_80 w-100 h-100 d-flex flex-wrap align-content-center justify-content-center rounded_c">
+                                    <a href="{% url 'view_event' 'test' %}" class="btn btn-light">Details</a>
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <p class="font-weight-bold">Lorem ipsum</p>
+                                <p class="text-muted m-0 p-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-sm-4 p-2">
+                        <div onmouseover="$('#overlay3').show()" onmouseout="$('#overlay3').hide()"  class="card event_card rounded_c p-2 bg-white border-0 custom_shadow">
+                                <span class="status badge badge-light alert-info">
+                                    Accra, Ghana
+                                </span>
+                            <img src="{% static 'home/asssets/slides/8.jpg' %}" class="card-img-top rounded_c custom_shadow" alt="Event Name">
+
+                            <div style="display: none" id="overlay3" class="card-img-overlay h-100 p-2">
+                                <div class="bg_trans_80 w-100 h-100 d-flex flex-wrap align-content-center justify-content-center rounded_c">
+                                    <a href="{% url 'view_event' 'test' %}" class="btn btn-light">Details</a>
+                                </div>
+                            </div>
+
+                            <div class="card-body">
+                                <p class="font-weight-bold">Lorem ipsum</p>
+                                <p class="text-muted m-0 p-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <!-- WHY CHOSE US -->
+                <div class="row mb-5">
+                    <!-- WHY CHOSE US -->
+                    <div class="col-sm-8">
+                        <h4>Why Choose Us?</h4>
+
+                        <div class="w-100 bg-white p-2">
+                            <!-- Nav pills -->
+                            <ul class="nav nav-pills">
+                              <li class="nav-item">
+                                <a class="nav-link active rounded-0" data-toggle="pill" href="#home">Reason XYZ</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link rounded-0" data-toggle="pill" href="#menu1">Reason JBL</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link rounded-0" data-toggle="pill" href="#menu2">Reason FRX</a>
+                              </li>
+                            </ul>
+                            <hr>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                              <div class="tab-pane container active" id="home">
+                                  <p class="text-muted font-weight-bold">
+                                      Some title for reason
+                                  </p>
+
+                                  <small class="text-muted">
+                                      Proin eget libero vel nunc cursus mollis ac eget sapien. Aenean porttitor euismod leo sed ultrices. Ut porta iaculis lorem ut placerat. Morbi non vulputate turpis. Aenean a tempor nulla. Maecenas nec pharetra felis, eget varius orci. Mauris vehicula, elit nec tincidunt mattis, nisi velit dignissim libero vel commodo eros lectus vel leo. Donec condimentum suscipit laoreet. Proin scelerisque mattis tristique.odio vel aliquam volutpat. in euismod sem lectus. ligula vehicula enenatis semper.
+                                  </small>
+
+                              </div>
+                              <div class="tab-pane container fade" id="menu1">
+                                  <p class="text-muted font-weight-bold">
+                                      Some title for reason
+                                  </p>
+
+                                  <small class="text-muted">
+                                      Proin eget libero vel nunc cursus mollis ac eget sapien. Aenean porttitor euismod leo sed ultrices. Ut porta iaculis lorem ut placerat. Morbi non vulputate turpis. Aenean a tempor nulla. Maecenas nec pharetra felis, eget varius orci. Mauris vehicula, elit nec tincidunt mattis, nisi velit dignissim libero vel commodo eros lectus vel leo. Donec condimentum suscipit laoreet. Proin scelerisque mattis tristique.odio vel aliquam volutpat. in euismod sem lectus. ligula vehicula enenatis semper.
+                                  </small>
+                              </div>
+                              <div class="tab-pane container fade" id="menu2">
+                                  <p class="text-muted font-weight-bold">
+                                      Some title for reason
+                                  </p>
+
+                                  <small class="text-muted">
+                                      Proin eget libero vel nunc cursus mollis ac eget sapien. Aenean porttitor euismod leo sed ultrices. Ut porta iaculis lorem ut placerat. Morbi non vulputate turpis. Aenean a tempor nulla. Maecenas nec pharetra felis, eget varius orci. Mauris vehicula, elit nec tincidunt mattis, nisi velit dignissim libero vel commodo eros lectus vel leo. Donec condimentum suscipit laoreet. Proin scelerisque mattis tristique.odio vel aliquam volutpat. in euismod sem lectus. ligula vehicula enenatis semper.
+                                  </small>
+                              </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <!-- CUSTOMER FEED BAC -->
+                    <div class="col-sm-4">
+                        <h4>Sister Brands</h4>
+                        <div class="w-100 bg-white p-2">
+
+                            <div class="w-100 d-flex p-2 border-bottom flex-wrap">
+                                <div class="w-25">
+                                    <div class="last_min_tours bg-dark">
+                                        <img src="{% static 'home/asssets/events/test/img.png' %}" alt="" height="100" class="">
+                                    </div>
+                                </div>
+
+                                <div class="w-75 d-flex flex-wrap">
+                                    <div class="w-100"><a href="" class="text-muted font-weight-bold">Brand Bame</a></div>
+                                    <p class="text-muted m-0 font-italic">
+                                        description
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="w-100 d-flex p-2 border-bottom flex-wrap">
+                                <div class="w-25">
+                                    <div class="last_min_tours bg-dark">
+                                        <img src="{% static 'home/asssets/events/test/img.png' %}" alt="" height="100" class="">
+                                    </div>
+                                </div>
+
+                                <div class="w-75 d-flex flex-wrap">
+                                    <div class="w-100"><a href="" class="text-muted font-weight-bold">Brand Bame</a></div>
+                                    <p class="text-muted m-0 font-italic">
+                                        description
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="w-100 d-flex p-2 border-bottom flex-wrap">
+                                <div class="w-25">
+                                    <div class="last_min_tours bg-dark">
+                                        <img src="{% static 'home/asssets/events/test/img.png' %}" alt="" height="100" class="">
+                                    </div>
+                                </div>
+
+                                <div class="w-75 d-flex flex-wrap">
+                                    <div class="w-100"><a href="" class="text-muted font-weight-bold">Brand Bame</a></div>
+                                    <p class="text-muted m-0 font-italic">
+                                        description
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+            </div>
+        </div>
+
+
+
+{% endblock %}
