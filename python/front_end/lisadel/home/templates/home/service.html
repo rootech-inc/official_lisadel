@@ -1,0 +1,348 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block body %}
+
+
+        <div>
+            <div class="container mt-2">
+                <div class="row">
+                    <div class="col-sm-9 bg-white p-0">
+                        <!-- IMAGES -->
+                        <div class="w-100 p-2" style="height: 50vh">
+                            <div id="demo" class="carousel slide h-100 rounded_c" data-ride="carousel">
+
+                        <!-- Indicators -->
+                        <ul class="carousel-indicators">
+                            <li data-target="#demo" data-slide-to="0" class="active"></li>
+                            <li data-target="#demo" data-slide-to="1"></li>
+                            <li data-target="#demo" data-slide-to="2"></li>
+                            <li data-target="#demo" data-slide-to="3"></li>
+                            <li data-target="#demo" data-slide-to="4"></li>
+                        </ul>
+
+                        <!-- The slideshow -->
+                        <div class="carousel-inner h-100">
+
+                            <!-- GALLERY -->
+                            <div class="carousel-item h-100 back_img active b" style="background: url('{% static 'home/asssets/events/test/img.png' %}')">
+                                <div class="w-100 h-100 d-flex  p-5 flex-wrap align-content-end justify-content-start">
+                                    
+                                </div>
+                            </div>
+                            <div class="carousel-item h-100 back_img b" style="background: url('{% static 'home/asssets/events/test/img_1.png' %}')">
+                                <div class="w-100 h-100 d-flex p-5 flex-wrap align-content-end justify-content-start">
+                                    
+                                </div>
+                            </div>
+                            <div class="carousel-item h-100 back_img b" style="background: url('{% static 'home/asssets/events/test/img_2.png' %}')">
+                                <div class="w-100 h-100 d-flex p-5 flex-wrap align-content-end justify-content-start">
+                                    
+                                </div>
+                            </div>
+                            <div class="carousel-item h-100 back_img b" style="background: url('{% static 'home/asssets/events/test/img_3.png' %}')">
+                                <div class="w-100 h-100 d-flex  p-5 flex-wrap align-content-end justify-content-start">
+                                    
+                                </div>
+                            </div>
+                            <div class="carousel-item h-100 back_img b" style="background: url('{% static 'home/asssets/events/test/img_4.png' %}')">
+                                <div class="w-100 h-100 d-flex  p-5 flex-wrap align-content-end justify-content-start">
+                                    
+                                </div>
+                            </div>
+
+
+
+                        </div>
+
+                        <!-- Left and right controls -->
+                                            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                                                <span class="carousel-control-prev-icon"></span>
+                                            </a>
+                                            <a class="carousel-control-next" href="#demo" data-slide="next">
+                                                <span class="carousel-control-next-icon"></span>
+                                            </a>
+
+                    </div>
+                        </div>
+
+
+
+                        <div class="bg-white p-3">
+
+
+                            <!-- DETAILS -->
+                            <div class="text-muted mb-5">
+                                <h4 class="text-muted font-weight-bolder">Service Name</h4>
+
+                                <!-- INTRO -->
+                                <small class="text-muted">
+                                    Tales of gladiators, executions, mock sea battles, and the daily life of ancient Romans await you on this fascinating tour of the Colosseum, Roman Forum, and Palatine Hill—all without waiting in line.
+        Standing atop the Opium Hill, gaze down at the Roman Colosseum and use this perfect opportunity to grab some great photographs. Your tour begins as you head down to enter the Colosseum, bypassing the notoriously long lines with your small-group tour. Your guide describes the mind-blowing history of the amphitheater and its importance as one of ancient Rome’s important social centers.
+        From the Palatine Hill, the most well known of the Seven Hills of Rome, you can admire sweeping panoramic views of the Roman Forum and Nero’s Circus Maximus.
+        March along the Via Sacra, or “Sacred Road”—the main street through ancient Rome and the traditional route of Roman Triumph, through to the Roman Forum. End the tour at the temple housing the altar where Julius Caesar was cremated.
+                                </small>
+
+                            </div>
+
+                            <!-- OTHER SERVICES -->
+                            <hr>
+                            <p class="text-muted font-weight-bolder">Other Services</p>
+
+                            <div class="row mb-5">
+
+                                <div class="col-sm-4 p-2">
+                                    <div class="w-100 custom_shadow bg-white">
+
+                                        <!-- IMAGE -->
+                                        <img
+                                                src="{% static 'home/asssets/events/test/img.png' %}"
+                                                alt=""
+                                                class="img-fluid"
+                                        >
+                                        <div class="p-2 d-flex flex-wrap align-content-center">
+                                            <div class="w-75">
+                                                <p class="m-0">Service Name</p>
+                                            </div>
+                                            <div class="w-25 text-right">
+                                                <p class="m-0"><a href="{% url 'service' 'hello-world' %}"><i class="fa fa-arrow-right text-success"></i></a></p>
+                                            </div>
+                                        </div>
+
+                                        </div>
+                                </div>
+                                <div class="col-sm-4 p-2">
+                                    <div class="w-100 bg-white custom_shadow">
+
+                                        <!-- IMAGE -->
+                                        <img
+                                                src="{% static 'home/asssets/events/test/img_1.png' %}"
+                                                alt=""
+                                                class="img-fluid"
+                                        >
+                                        <div class="p-2 d-flex flex-wrap align-content-center">
+                                            <div class="w-75">
+                                                <p class="m-0">Service Name</p>
+                                            </div>
+                                            <div class="w-25 text-right">
+                                                <p class="m-0"><a href="#"><i class="fa fa-arrow-right text-success"></i></a></p>
+                                            </div>
+                                        </div>
+
+                                        </div>
+                                </div>
+                                <div class="col-sm-4 p-2">
+                                    <div class="w-100 bg-white custom_shadow">
+
+                                        <!-- IMAGE -->
+                                        <img
+                                                src="{% static 'home/asssets/events/test/img_2.png' %}"
+                                                alt=""
+                                                class="img-fluid"
+                                        >
+                                        <div class="p-2 d-flex flex-wrap align-content-center">
+                                            <div class="w-75">
+                                                <p class="m-0">Service Name</p>
+                                            </div>
+                                            <div class="w-25 text-right">
+                                                <p class="m-0"><a href="#"><i class="fa fa-arrow-right text-success"></i></a></p>
+                                            </div>
+                                        </div>
+
+                                        </div>
+                                </div>
+                                <div class="col-sm-4 p-2">
+                                    <div class="w-100 bg-white custom_shadow">
+
+                                        <!-- IMAGE -->
+                                        <img
+                                                src="{% static 'home/asssets/events/test/img_3.png' %}"
+                                                alt=""
+                                                class="img-fluid"
+                                        >
+                                        <div class="p-2 d-flex flex-wrap align-content-center">
+                                            <div class="w-75">
+                                                <p class="m-0">Service Name</p>
+                                            </div>
+                                            <div class="w-25 text-right">
+                                                <p class="m-0"><a href="#"><i class="fa fa-arrow-right text-success"></i></a></p>
+                                            </div>
+                                        </div>
+
+                                        </div>
+                                </div>
+                                <div class="col-sm-4 p-2">
+                                    <div class="w-100 bg-white custom_shadow">
+
+                                        <!-- IMAGE -->
+                                        <img
+                                                src="{% static 'home/asssets/events/test/img_4.png' %}"
+                                                alt=""
+                                                class="img-fluid"
+                                        >
+                                        <div class="p-2 d-flex flex-wrap align-content-center">
+                                            <div class="w-75">
+                                                <p class="m-0">Service Name</p>
+                                            </div>
+                                            <div class="w-25 text-right">
+                                                <p class="m-0"><a href="#"><i class="fa fa-arrow-right text-success"></i></a></p>
+                                            </div>
+                                        </div>
+
+                                        </div>
+                                </div>
+                                <div class="col-sm-4 p-2">
+                                    <div class="w-100 bg-white custom_shadow">
+
+                                        <!-- IMAGE -->
+                                        <img
+                                                src="{% static 'home/asssets/events/test/img_5.png' %}"
+                                                alt=""
+                                                class="img-fluid"
+                                        >
+                                        <div class="p-2 d-flex flex-wrap align-content-center">
+                                            <div class="w-75">
+                                                <p class="m-0">Service Name</p>
+                                            </div>
+                                            <div class="w-25 text-right">
+                                                <p class="m-0"><a href="#"><i class="fa fa-arrow-right text-success"></i></a></p>
+                                            </div>
+                                        </div>
+
+                                        </div>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+
+
+
+
+
+
+
+                    </div>
+
+                    <!-- OTHER EVENTS -->
+                    <div class="col-sm-3">
+
+                        <!-- BOOKING -->
+                        <div class="w-100 card p-2 alert-info custom_shadow border-0 mb-5 rounded-0 p-2">
+                            <h4 class="text-center font-weight-bolder mb-4">
+                                Contact Us
+                            </h4>
+                            <p class="p-0 text-muted text-center">
+                                Fill out this form
+                            </p>
+                            <hr>
+
+
+                            <!-- CONACT INTO -->
+                            <small class="text-dark">
+                                Contact Info
+                            </small>
+                            <div class="p-1">
+
+                                <input type="text" placeholder="Your Name" required class="form-control mb-2 rounded-0">
+                                <input type="email" placeholder="Email" required class="form-control mb-2 rounded-0">
+                                <input type="tel" placeholder="Contact Number" required class="form-control mb-2 rounded-0">
+
+                            </div>
+
+                            <small class="text-dark">
+                                Message
+                            </small>
+                            <div class="p-1">
+
+                                <textarea placeholder="Message" class="form-control rounded-0" rows="5"></textarea>
+
+                            </div>
+
+                            <div class="w-100 p-1">
+                                <button  class="btn btn-success w-100 rounded-0">SUBMIT</button>
+                            </div>
+
+
+
+                        </div>
+
+                        <!-- OTHER EVENTS -->
+                        <div class="w-100 card p-2 custom_shadow border-0 mb-5 rounded-0 p-2">
+                            <p class="p-0 text-muted font-weight-bolder">
+                                Last Minute Tours
+                            </p>
+
+                            <div class="w-100 d-flex p-1 flex-wrap">
+                                <div class="w-25">
+                                    <div class="last_min_tours bg-dark">
+                                        <img src="{% static 'home/asssets/events/test/img.png' %}" alt="" height="100" class="">
+                                    </div>
+                                </div>
+
+                                <div class="w-75 d-flex flex-wrap">
+                                    <a href="" class="text-muted">Event Name</a>
+                                    <small class="text-muted">
+                                        <kbd class="alert-success">$250.00</kbd> PER PERSON
+                                    </small>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="w-100 d-flex p-1 flex-wrap">
+                                <div class="w-25">
+                                    <div class="last_min_tours bg-dark">
+                                        <img src="{% static 'home/asssets/events/test/img.png' %}" alt="" height="100" class="">
+                                    </div>
+                                </div>
+
+                                <div class="w-75 d-flex flex-wrap">
+                                    <a href="" class="text-muted">Event Name</a>
+                                    <small class="text-muted">
+                                        <kbd class="alert-success">$250.00</kbd> PER PERSON
+                                    </small>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="w-100 d-flex border p-1 flex-wrap">
+                                <div class="w-25">
+                                    <div class="last_min_tours bg-dark">
+                                        <img src="{% static 'home/asssets/events/test/img.png' %}" alt="" height="100" class="">
+                                    </div>
+                                </div>
+
+                                <div class="w-75 d-flex flex-wrap">
+                                    <a href="" class="text-muted">Event Name</a>
+                                    <small class="text-muted">
+                                        <kbd class="alert-success">$250.00</kbd> PER PERSON
+                                    </small>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- HELP -->
+                        <div class="w-100 card p-2 custom_shadow border-0 mb-5 rounded-0 p-2">
+                            <p class="p-0 text-muted font-weight-bolder">
+                                Need Our Help?
+                            </p>
+
+                            <small class="text-muted">
+                                We would be more than happy to help you. Our team advisor are 24/7 at your service to help you.
+                            </small> <br>
+                            <a href="#" class="text-muted"> <small><i class="fa fa-phone"></i> 111-222-333</small></a>
+                            <a href="#" class="text-muted"> <small><i class="fa fa-whatsapp"></i> 111-222-333</small></a>
+                            <a href="#" class="text-muted"> <small><i class="fa fa-envelope"></i> email@domain.com</small></a>
+                            <a href="#" class="text-muted"> <small><i class="fa fa-map"></i> Ghana Link</small></a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+{% endblock %}

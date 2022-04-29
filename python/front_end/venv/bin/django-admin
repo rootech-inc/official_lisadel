@@ -1,4 +1,6 @@
-#!/home/stuffs/Development/official_lisadel/python/front_end/venv/bin/python3
+#!/bin/sh
+'''exec' "/home/hub/Development/GIT REPOS/official_lisadel/python/front_end/venv/bin/python" "$0" "$@"
+' '''
 # -*- coding: utf-8 -*-
 import re
 import sys

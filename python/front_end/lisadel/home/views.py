@@ -20,4 +20,8 @@ def services(request):
 
 # about us
 def about_us(request):
-    return render(request,'home/about-us.html')
+    return render(request, 'home/about-us.html')
+
+
+def service(request,service):
+    return render(request, 'home/service.html')
