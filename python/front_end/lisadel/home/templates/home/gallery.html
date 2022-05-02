@@ -1,0 +1,88 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block body %}
+
+
+        <div>
+            <div class="container mt-2">
+                <p class="text-muted font-weight-bolder">Our Gallery</p>
+
+              <!-- ### position of the gallery ### -->
+              <div id="nanogallery"></div>
+
+             <script>
+                 function Demo_Images_Videos() {
+                    jQuery("#nanogallery").nanogallery2({
+
+                      // CONTENT SOURCE
+                                items:[
+                                    {
+                                        src:          'https://vimeo.com/32875422',                           // media url
+                                        srct:         'https://i.vimeocdn.com/video/222726041_1280x720.jpg',  // media thumbnail url
+                                        title:        'Vimeo video',                                          // media title
+                                    },
+                                    { src: 'https://www.youtube.com/watch?v=i5qOzqD9Rms', title: 'Youtube video' },
+                                    { src: 'https://www.dailymotion.com/video/x7shbov',   title: 'Dailymotion video' },
+                                    { src: 'berlin1.jpg',      srct: 'berlin1t.jpg',   title: 'Self hosted image' },
+                                    { src: 'berlin2.jpg',      srct: 'berlin2t.jpg',   title: 'Self hosted image' },
+                                    { src: 'berlin3.jpg',      srct: 'berlin3t.jpg',   title: 'Self hosted image' },
+                                    { src: 'berlin1.jpg',      srct: 'berlin1t.jpg',   title: 'Self hosted image' },
+                                    { src: 'berlin2.jpg',      srct: 'berlin2t.jpg',   title: 'Self hosted image' },
+                                    { src: 'berlin3.jpg',      srct: 'berlin3t.jpg',   title: 'Self hosted image' }
+                                ],
+                                itemsBaseURL:    'https://nanogallery2.nanostudio.org/samples/',
+
+                      // GALLERY AND THUMBNAIL LAYOUT
+                      galleryDisplayMode: 'fullContent',
+                      gallerySorting: 'random',
+
+
+                      // thumbnail
+                      thumbnailHeight: 200, thumbnailWidth: 350,
+                      thumbnailGutterWidth: 2,
+                      thumbnailGutterHeight: 2,
+                      thumbnailBorderHorizontal: 0,
+                      thumbnailBorderVertical: 0,
+
+                      thumbnailAlignment: 'fillWidth',
+
+                      // THUMBNAIL TOOLS & LABEL
+                      thumbnailToolbarImage : null,
+                      thumbnailToolbarAlbum: null,
+                      thumbnailLabel: { display: true, position:'overImageOnBottom', hideIcons: true, titleFontSize: '2em', align: 'center', titleMultiLine:true, displayDescription: false},
+
+                      // DISPLAY ANIMATION
+                      thumbnailL1DisplayTransition: 'flipUp',         // first level display animation
+                      thumbnailDisplayTransition: 'slideDown',        // other levels display animation
+                      thumbnailDisplayTransitionDuration: 500,
+                      thumbnailDisplayInterval: 30,
+
+                      // THUMBNAIL'S HOVER ANIMATION
+                      // first level
+                      thumbnailBuildInit2: 'title_font-weight_bold',
+                      thumbnailHoverEffect2: 'imageBlurOff',
+                      // other levels -> no hover effect
+                      // touch handling
+                      touchAnimation: false,
+                      touchAutoOpenDelay: 800,
+
+                      // GALLERY THEME
+                      galleryTheme : {
+                        thumbnail: { titleShadow : '', descriptionShadow : 'none', titleColor: '#fff', borderColor: '#000' },
+                        navigationBreadcrumb: { background : '#3C4B5B' },
+                      },
+
+                      // DEEP LINKING
+                      locationHash: false
+                    });
+                  }
+                  Demo_Images_Videos();
+              </script>
+
+            </div>
+        </div>
+
+
+
+{% endblock %}

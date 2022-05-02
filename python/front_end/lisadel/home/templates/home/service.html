@@ -73,14 +73,11 @@
 
                             <!-- DETAILS -->
                             <div class="text-muted mb-5">
-                                <h4 class="text-muted font-weight-bolder">Service Name</h4>
+                                <h4 class="text-muted font-weight-bolder">{{ service.title }}</h4>
 
                                 <!-- INTRO -->
                                 <small class="text-muted">
-                                    Tales of gladiators, executions, mock sea battles, and the daily life of ancient Romans await you on this fascinating tour of the Colosseum, Roman Forum, and Palatine Hill—all without waiting in line.
-        Standing atop the Opium Hill, gaze down at the Roman Colosseum and use this perfect opportunity to grab some great photographs. Your tour begins as you head down to enter the Colosseum, bypassing the notoriously long lines with your small-group tour. Your guide describes the mind-blowing history of the amphitheater and its importance as one of ancient Rome’s important social centers.
-        From the Palatine Hill, the most well known of the Seven Hills of Rome, you can admire sweeping panoramic views of the Roman Forum and Nero’s Circus Maximus.
-        March along the Via Sacra, or “Sacred Road”—the main street through ancient Rome and the traditional route of Roman Triumph, through to the Roman Forum. End the tour at the temple housing the altar where Julius Caesar was cremated.
+                                    {{ service.description }}
                                 </small>
 
                             </div>
@@ -91,126 +88,28 @@
 
                             <div class="row mb-5">
 
-                                <div class="col-sm-4 p-2">
-                                    <div class="w-100 custom_shadow bg-white">
+                                {% for serv in all_services %}
+                                    <div class="col-sm-4 p-2">
+                                        <div class="w-100 custom_shadow bg-white">
 
-                                        <!-- IMAGE -->
-                                        <img
-                                                src="{% static 'home/asssets/events/test/img.png' %}"
-                                                alt=""
-                                                class="img-fluid"
-                                        >
-                                        <div class="p-2 d-flex flex-wrap align-content-center">
-                                            <div class="w-75">
-                                                <p class="m-0">Service Name</p>
+                                            <!-- IMAGE -->
+                                            <img
+                                                    src="{% static 'home/asssets/events/test/img.png' %}"
+                                                    alt=""
+                                                    class="img-fluid"
+                                            >
+                                            <div class="p-2 d-flex flex-wrap align-content-center">
+                                                <div class="w-75">
+                                                    <p class="m-0">{{ serv.title }}</p>
+                                                </div>
+                                                <div class="w-25 text-right">
+                                                    <p class="m-0"><a href="{% url 'service' serv.url_parse %}"><i class="fa fa-arrow-right text-success"></i></a></p>
+                                                </div>
                                             </div>
-                                            <div class="w-25 text-right">
-                                                <p class="m-0"><a href="{% url 'service' 'hello-world' %}"><i class="fa fa-arrow-right text-success"></i></a></p>
-                                            </div>
-                                        </div>
 
-                                        </div>
-                                </div>
-                                <div class="col-sm-4 p-2">
-                                    <div class="w-100 bg-white custom_shadow">
-
-                                        <!-- IMAGE -->
-                                        <img
-                                                src="{% static 'home/asssets/events/test/img_1.png' %}"
-                                                alt=""
-                                                class="img-fluid"
-                                        >
-                                        <div class="p-2 d-flex flex-wrap align-content-center">
-                                            <div class="w-75">
-                                                <p class="m-0">Service Name</p>
                                             </div>
-                                            <div class="w-25 text-right">
-                                                <p class="m-0"><a href="#"><i class="fa fa-arrow-right text-success"></i></a></p>
-                                            </div>
-                                        </div>
-
-                                        </div>
-                                </div>
-                                <div class="col-sm-4 p-2">
-                                    <div class="w-100 bg-white custom_shadow">
-
-                                        <!-- IMAGE -->
-                                        <img
-                                                src="{% static 'home/asssets/events/test/img_2.png' %}"
-                                                alt=""
-                                                class="img-fluid"
-                                        >
-                                        <div class="p-2 d-flex flex-wrap align-content-center">
-                                            <div class="w-75">
-                                                <p class="m-0">Service Name</p>
-                                            </div>
-                                            <div class="w-25 text-right">
-                                                <p class="m-0"><a href="#"><i class="fa fa-arrow-right text-success"></i></a></p>
-                                            </div>
-                                        </div>
-
-                                        </div>
-                                </div>
-                                <div class="col-sm-4 p-2">
-                                    <div class="w-100 bg-white custom_shadow">
-
-                                        <!-- IMAGE -->
-                                        <img
-                                                src="{% static 'home/asssets/events/test/img_3.png' %}"
-                                                alt=""
-                                                class="img-fluid"
-                                        >
-                                        <div class="p-2 d-flex flex-wrap align-content-center">
-                                            <div class="w-75">
-                                                <p class="m-0">Service Name</p>
-                                            </div>
-                                            <div class="w-25 text-right">
-                                                <p class="m-0"><a href="#"><i class="fa fa-arrow-right text-success"></i></a></p>
-                                            </div>
-                                        </div>
-
-                                        </div>
-                                </div>
-                                <div class="col-sm-4 p-2">
-                                    <div class="w-100 bg-white custom_shadow">
-
-                                        <!-- IMAGE -->
-                                        <img
-                                                src="{% static 'home/asssets/events/test/img_4.png' %}"
-                                                alt=""
-                                                class="img-fluid"
-                                        >
-                                        <div class="p-2 d-flex flex-wrap align-content-center">
-                                            <div class="w-75">
-                                                <p class="m-0">Service Name</p>
-                                            </div>
-                                            <div class="w-25 text-right">
-                                                <p class="m-0"><a href="#"><i class="fa fa-arrow-right text-success"></i></a></p>
-                                            </div>
-                                        </div>
-
-                                        </div>
-                                </div>
-                                <div class="col-sm-4 p-2">
-                                    <div class="w-100 bg-white custom_shadow">
-
-                                        <!-- IMAGE -->
-                                        <img
-                                                src="{% static 'home/asssets/events/test/img_5.png' %}"
-                                                alt=""
-                                                class="img-fluid"
-                                        >
-                                        <div class="p-2 d-flex flex-wrap align-content-center">
-                                            <div class="w-75">
-                                                <p class="m-0">Service Name</p>
-                                            </div>
-                                            <div class="w-25 text-right">
-                                                <p class="m-0"><a href="#"><i class="fa fa-arrow-right text-success"></i></a></p>
-                                            </div>
-                                        </div>
-
-                                        </div>
-                                </div>
+                                    </div>
+                                {% endfor %}
 
 
                             </div>

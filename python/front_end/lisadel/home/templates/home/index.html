@@ -115,16 +115,18 @@
                 </p>
 
                 <div class="row">
-                    <div class="col-sm-4 p-2">
-                        <div onmouseover="$('#overlay1').show()" onmouseout="$('#overlay1').hide()"  class="card event_card rounded_c p-2 bg-white border-0 custom_shadow">
+                    {% for event in events %}
+
+                        <div class="col-sm-4 p-2">
+                        <div onmouseover="$('#overlay{{ event.id }}').show()" onmouseout="$('#overlay{{ event.id }}').hide()"  class="card event_card rounded_c p-2 bg-white border-0 custom_shadow">
                                 <span class="status badge badge-light alert-info">
                                     Accra, Ghana
                                 </span>
                             <img src="{% static 'home/asssets/slides/5.jpg' %}" class="card-img-top rounded_c custom_shadow" alt="Event Name">
 
-                            <div style="display: none" id="overlay1" class="card-img-overlay h-100 p-2">
+                            <div style="display: none" id="overlay{{ event.id }}" class="card-img-overlay h-100 p-2">
                                 <div class="bg_trans_80 w-100 h-100 d-flex flex-wrap align-content-center justify-content-center rounded_c">
-                                    <a href="{% url 'view_event' 'test' %}" class="btn btn-light">Details</a>
+                                    <a href="{% url 'view_event' event.url_parse  %}" class="btn btn-light">Details</a>
                                 </div>
                             </div>
 
@@ -135,6 +137,8 @@
 
                         </div>
                     </div>
+
+                    {% endfor %}
                 </div>
 
                 <div class="text-center m-2"><a href="#" class="btn btn-light"> View All</a></div>
@@ -148,56 +152,22 @@
                 </p>
 
                 <!-- PETTY SERVICES -->
-                <div class="row">
+                <div class="row d-flex flex-wrap justify-content-center">
+                    {% for service in services %}
 
-                    <div class="col-sm-3 p-2 m-0">
+                        <div class="col-sm-3 p-2 m-0">
                         <div class="w-100 text-center bg-white p-5">
                             <div class="serv_img bg-info p-2 rounded-circle rounded mx-auto">
                                 <img src="{% static 'home/asssets/icons/services/default.png' %}" alt="" class="img-fluid">
                             </div>
                             <p class="m-2">
-                                <a href="#" class="p-0 m-0 font-weight-bold text-muted">Petty Service</a>
+                                <a href="{% url 'service' service.url_parse %}" class="p-0 m-0 font-weight-bold text-muted">{{ service.title }}</a>
                             </p>
                             <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus alias beatae,</small>
                         </div>
                     </div>
 
-                    <div class="col-sm-3 p-2 m-0">
-                        <div class="w-100 text-center bg-white p-5">
-                            <div class="serv_img bg-info p-2 rounded-circle rounded mx-auto">
-                                <img src="{% static 'home/asssets/icons/services/default.png' %}" alt="" class="img-fluid">
-                            </div>
-                            <p class="m-2">
-                                <a href="#" class="p-0 m-0 font-weight-bold text-muted">Petty Service</a>
-                            </p>
-                            <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus alias beatae,</small>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3 p-2 m-0">
-                        <div class="w-100 text-center bg-white p-5">
-                            <div class="serv_img bg-info p-2 rounded-circle rounded mx-auto">
-                                <img src="{% static 'home/asssets/icons/services/default.png' %}" alt="" class="img-fluid">
-                            </div>
-                            <p class="m-2">
-                                <a href="#" class="p-0 m-0 font-weight-bold text-muted">Petty Service</a>
-                            </p>
-                            <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus alias beatae,</small>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3 p-2 m-0">
-                        <div class="w-100 text-center bg-white p-5">
-                            <div class="serv_img bg-info p-2 rounded-circle rounded mx-auto">
-                                <img src="{% static 'home/asssets/icons/services/default.png' %}" alt="" class="img-fluid">
-                            </div>
-                            <p class="m-2">
-                                <a href="#" class="p-0 m-0 font-weight-bold text-muted">Petty Service</a>
-                            </p>
-                            <small class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus alias beatae,</small>
-                        </div>
-                    </div>
-
+                    {% endfor %}
 
                 </div>
                 <hr>
@@ -216,10 +186,10 @@
                         "thumbnailAlignment": "center",
                         "thumbnailOpenImage": true
                       }'>
-                    <a href="1.jpg" data-ngthumb="1.jpg" data-ngdesc="Kwehu">Kwehu</a>
-                    <a href="2.jpg" data-ngthumb="2.jpg" data-ngdesc="">Mountain Azam</a>
-                    <a href="3.jpg" data-ngthumb="3.jpg" data-ngdesc="">River Danger</a>
-                    <a href="4.jpg" data-ngthumb="4.jpg" data-ngdesc="">Climb</a>
+                    {% for gall in gallery %}
+                        <a href="1.jpg" data-ngthumb="1.jpg" data-ngdesc="Kwehu">Kwehu</a>
+                    {% endfor %}
+
 
                 </div>
 

@@ -11,55 +11,38 @@
                     <h4>
                         We’re truely dedicated to make your travel experience as much simple and fun as possible!
                     </h4>
-                    <p><small>
+                    <p>
                         Lisadel Travel & Tours is a well-established travel Agency that’s specializes in Tour packages all over the world, Hotel Reservation, Airline Ticketing With experienced staff members in handling inbound and outbound holidays and reservations.
-                    </small></p>
-                    <p><small>
+                    </p>
+                    <p>
                         In Lisadel Travel & Tours, we serve our clients with the best assistance when it comes to the airline service and hospitality.
-                    </small></p>
-                    <p><small>
+                   </p>
+                    <p>
 Our specialty is the ability to design unique all-inclusive packages to fit every type of tourist, from the budget to the luxury. We offer unbeatable prices for Individuals, families and groups. If you’re looking for a vacation that provides a huge sense of personal recreation, fun, excitement, relaxation, adventure, Lisadel Travel & Tours is the best agency to contact.
-                    </small></p>
+                    </p>
                 </div>
 
                 <!-- TEAM -->
                 <h5 class="text-muted text-center">Lisadel Dedicated Team</h5>
                 <div class="row mb-5 d-flex flex-wrap justify-content-center">
 
-                    <div class="col-md-4">
+                    {% for member in team_member %}
+                        <div class="col-md-4">
                                 <div class="card-box text-center">
                                     <div class="user-pic">
                                         <img src="{% static 'home/asssets/team/c4c148410b996fa929f26253bbe2a1d2.jpg' %}" class="img-fluid" alt="User Pic">
                                     </div>
-                                    <h4>MRS ALICE SAGOE MANKOR</h4>
-                                    <small>Chief Executive Officer
-                                    </small>
+                                    <h4>{{ member.name }}</h4>
+                                    <small>{{ member.position }}</small>
                                     <hr>
                                     <div class="w-100 d-flex flex-wrap justify-content-center">
-                                        <a href="#" class="btn btn-outline-primary m-1"><i class="fa fa-facebook"></i></a>
-                                        <a href="#" class="btn btn-outline-danger m-1"><i class="fa fa-instagram"></i></a>
-                                        <a href="#" class="btn btn-outline-primary m-1"><i class="fa fa-linkedin"></i></a>
-                                        <a href="#" class="btn btn-outline-warning m-1"><i class="fa fa-envelope-o"></i></a>
+                                        <a href="{{ member.fb }}" target="_blank" class="btn btn-outline-primary m-1"><i class="fa fa-facebook"></i></a>
+                                        <a href="{{ member.linked }}" target="_blank" class="btn btn-outline-primary m-1"><i class="fa fa-linkedin"></i></a>
+                                        <a href="{{ member.twi }}" target="_blank" class="btn btn-outline-warning m-1"><i class="fa fa-twitch"></i></a>
                                     </div>
                                 </div>
                     </div>
-
-                    <div class="col-md-4">
-                                <div class="card-box text-center">
-                                    <div class="user-pic">
-                                        <img src="{% static 'home/asssets/team/6b04e260cbb2ea665306eb804cf4f049.jpg' %}" class="img-fluid" alt="User Pic">
-                                    </div>
-                                    <h4>ANSAH ANDREWS APPEADU</h4>
-                                    <small>TICKETING AND RESERVATION MANAGER</small>
-                                    <hr>
-                                    <div class="w-100 d-flex flex-wrap justify-content-center">
-                                        <a href="#" class="btn btn-outline-primary m-1"><i class="fa fa-facebook"></i></a>
-                                        <a href="#" class="btn btn-outline-danger m-1"><i class="fa fa-instagram"></i></a>
-                                        <a href="#" class="btn btn-outline-primary m-1"><i class="fa fa-linkedin"></i></a>
-                                        <a href="#" class="btn btn-outline-warning m-1"><i class="fa fa-envelope-o"></i></a>
-                                    </div>
-                                </div>
-                    </div>
+                    {% endfor %}
 
                 </div>
 
@@ -143,10 +126,16 @@ Our specialty is the ability to design unique all-inclusive packages to fit ever
                         <small class="text-muted">
                                 We would be more than happy to help you. Our team advisor are 24/7 at your service to help you.
                             </small> <br>
-                            <a href="#" class="text-muted w-100"> <small><i class="fa fa-phone"></i> 111-222-333</small></a><br>
-                            <a href="#" class="text-muted w-100"> <small><i class="fa fa-whatsapp"></i> 111-222-333</small></a><br>
-                            <a href="#" class="text-muted w-100"> <small><i class="fa fa-envelope"></i> email@domain.com</small></a><br>
-                            <a href="https://goo.gl/maps/k4LemPJxqSbX5RvP9" target="_blank" class="text-muted"> <small><i class="fa fa-map"></i> 46 Mensah Wood Ave, Accra</small></a>
+                            <div class="w-100">
+                                <a href="#" class="text-muted"> <small><i class="fa fa-phone"></i> 111-222-333</small></a>
+                            </div>
+                            <div class="w-100">
+                                <a href="#" class="text-muted"> <small><i class="fa fa-whatsapp"></i> 111-222-333</small></a>
+                            </div>
+                            <div class="w-100">
+                                <a href="#" class="text-muted"> <small><i class="fa fa-envelope"></i> email@domain.com</small></a>
+                            </div>
+                            <div class="w-100"><a href="https://goo.gl/maps/k4LemPJxqSbX5RvP9" target="_blank" class="text-muted"> <small><i class="fa fa-map"></i> 46 Mensah Wood Ave, Accra</small></a></div>
                     </div>
                 </div>
 

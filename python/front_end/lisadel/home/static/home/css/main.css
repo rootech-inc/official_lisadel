@@ -116,12 +116,12 @@ text_sm
 }
 .home_nav_item
 {
-    border-bottom: 5px solid #343a40 !important
+    border-bottom: 5px solid #1B3276 !important
 }
 
 .home_nav_item:hover
 {
-    border-bottom: 5px solid #17a2b8 !important;
+    border-bottom: 5px solid #F30B0B !important;
 }
 
 .last_min_tours
@@ -186,4 +186,47 @@ text_sm
 textarea
 {
     resize: none;
+}
+
+.brand_text_primary{
+    color: #1B3276 !important;
+}
+
+.brand_bg_primary{
+    background: #1B3276 !important;
+    color: #f8f9fa;
+}
+
+.brand_btn_primary
+{
+    background: #1B3276 !important;
+    color: #f8f9fa;
+}
+
+.brand_btn_primary:hover
+{
+    background: #0d1b44 !important;
+    color: #f8f9fa;
+}
+
+
+.brand_text_secondary{
+    color: #F30B0B !important;
+}
+
+.brand_bg_secondary{
+    background: #F30B0B !important;
+    color: #f8f9fa;
+}
+
+.brand_btn_secondary
+{
+    background: #F30B0B !important;
+    color: #f8f9fa;
+}
+
+.brand_btn_secondary:hover
+{
+    background: #7a0707 !important;
+    color: #f8f9fa;
 }

@@ -12,10 +12,10 @@
                         <!-- TOP DETAILS -->
                        <nav class="navbar navbar-expand-sm text-muted navbar-dark">
                            <div class="w-50  h-100 d-flex flex-wrap align-content-center">
-                              <h3 class="font-weight-bolder">Event Name</h3>
+                              <h3 class="font-weight-bolder">{{ event.title }}</h3>
                           </div>
-                          <div class="w-50 ml-auto h-100 d-flex flex-wrap align-content-center justify-content-end">
-                              00/00/0000 to 00/00/0000
+                          <div class="w-50 ml-auto h-100 d-flex flex-wrap align-content-center justify-content-end text-info">
+                              {{ event.start_date }} to {{ event.end_date }}
                           </div>
                        </nav>
 
@@ -92,24 +92,15 @@
 
                                 <!-- INTRO -->
                                 <small class="text-muted">
-                                    Tales of gladiators, executions, mock sea battles, and the daily life of ancient Romans await you on this fascinating tour of the Colosseum, Roman Forum, and Palatine Hill—all without waiting in line.
-        Standing atop the Opium Hill, gaze down at the Roman Colosseum and use this perfect opportunity to grab some great photographs. Your tour begins as you head down to enter the Colosseum, bypassing the notoriously long lines with your small-group tour. Your guide describes the mind-blowing history of the amphitheater and its importance as one of ancient Rome’s important social centers.
-        From the Palatine Hill, the most well known of the Seven Hills of Rome, you can admire sweeping panoramic views of the Roman Forum and Nero’s Circus Maximus.
-        March along the Via Sacra, or “Sacred Road”—the main street through ancient Rome and the traditional route of Roman Triumph, through to the Roman Forum. End the tour at the temple housing the altar where Julius Caesar was cremated.
+                                    {{ event.overview | striptags | safe}}
                                 </small>
 
-                                <p class="text-muted m-0 mt-2 font-weight-bolder">Day 01</p>
-                                <small>
-                                    Praesent eros turpis, commodo vel justo at, pulvinar mollis eros. Mauris aliquet eu quam id ornare. Morbi ac quam enim. Cras vitae nulla condimentum, semper dolor non, faucibus dolor. Vivamus adipiscing eros quis orci fringilla, sed pretium lectus viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec nec velit non odio aliquam suscipit. Sed non neque faucibus, condimentum lectus at, accumsan enim. Fusce pretium egestas cursus. Etiam consectetur, orci vel rutrum volutpat, odio odio pretium nisiodo tellus libero et urna. Sed commodo ipsum ligula, id volutpat risus vehicula in. Pellentesque non massa eu nibh posuere bibendum non sed enim. Maecenas lobortis nulla sem, vel egestas dui ullamcorper ac.
-                                </small>
-                                <p class="text-muted m-0 mt-2 font-weight-bolder">Day 02</p>
-                                <small>
-                                    Sed scelerisque lectus sit amet faucibus sodales. Proin ut risus tortor. Etiam fermentum tellus auctor, fringilla sapien et, congue quam. In a luctus tortor. Suspendisse eget tempor libero, ut sollicitudin ligula. Nulla vulputate tincidunt est non congue. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Phasellus at est imperdiet, dapibus ipsum vel, lacinia nulla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Phasellus id interdum lectus, ut elementum elit. Nullam a molestie magna. Praesent eros turpis, commodo vel justo at, pulvinar mollis eros. Mauris aliquet eu quam id ornare. Morbi ac quam enim. Cras vitae nulla condimentum, semper dolor non, faucibus dolor. Vivamus adipiscing eros quis orci fringilla, sed pretium lectus viverra.
-                                </small>
-                                <p class="text-muted m-0 mt-2 font-weight-bolder">Day 03</p>
-                                <small>
-                                    Praesent eros turpis, commodo vel justo at, pulvinar mollis eros. Mauris aliquet eu quam id ornare. Morbi ac quam enim. Cras vitae nulla condimentum, semper dolor non, faucibus dolor. Vivamus adipiscing eros quis orci fringilla, sed pretium lectus viverra. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec nec velit non odio aliquam suscipit. Sed non neque faucibus, condimentum lectus at, accumsan enim. Fusce pretium egestas cursus. Etiam consectetur, orci vel rutrum volutpat, odio odio pretium nisiodo tellus libero et urna. Sed commodo ipsum ligula, id volutpat risus vehicula in. Pellentesque non massa eu nibh posuere bibendum non sed enim. Maecenas lobortis nulla
-                                </small>
+                                {% for timeline in event_timeline  %}
+                                    <p class="text-muted m-0 mt-2 font-weight-bolder">{{ timeline.title }}</p>
+                                    <small>
+                                        {{ timeline.details }}
+                                    </small>
+                                {% endfor %}
                             </div>
 
                             <!-- MINI DETAILS AND BOOK -->

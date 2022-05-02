@@ -1,31 +1,77 @@
 from django.http import HttpResponse
 from django.shortcuts import render
+from . import models
 
 
 # Create your views here.
 def index(request):
     # return HttpResponse("Hello World")
-    return render(request, 'home/index.html')
+    all_tours = models.tours.objects.all()[:6]
+    services = models.services.objects.all()
+    gallery = models.TourGallery.objects.all()[:10]
 
-
-# view single event
-def event_view(request, event):
-    return render(request, 'home/event.html')
-
-
-# services
-def services(request):
-    return render(request, 'home/services.html')
+    context = {
+        'events': all_tours,
+        'page_title': 'Home',
+        'services': services,
+        'gallery': gallery
+    }
+    return render(request, 'home/index.html', context)
 
 
 # about us
 def about_us(request):
-    return render(request, 'home/about-us.html')
+    context = {
+        'page_title': 'About Us',
+        'team_member': models.team.objects.all()
+    }
+    return render(request, 'home/about-us.html', context)
 
 
-def service(request,service):
-    return render(request, 'home/service.html')
+# services
+def services(request):
+    context = {
+        'page_title': 'Services',
+        'all_services': models.services.objects.all()
+    }
+    return render(request, 'home/services.html', context)
 
 
+# service
+def service(request, service):
+    srv = models.services.objects.get(url_parse=service)
+    context = {
+        'page_title': 'Services | ' + str(srv.title),
+        'service': srv,
+        'all_services': models.services.objects.all().exclude(url_parse=service)
+    }
+    return render(request, 'home/service.html', context)
+
+
+# events
 def events(request):
-    return render(request, 'home/events.html')
+    all_tours = models.tours.objects.all()[:12]
+
+    context = {
+        'events': all_tours,
+        'page_title': 'Tourism Events',
+    }
+    return render(request, 'home/events.html', context)
+
+
+# view single event
+def event_view(request, event):
+    all_tours = models.tours.objects.all()[:12]
+    event = models.tours.objects.get(url_parse=event)
+
+    context = {
+        'event': event,
+        'events': all_tours,
+        'page_title': 'Tourism Events | ' + str(event.title),
+        'event_timeline': models.timeline.objects.filter(event=event.tour_uni)
+    }
+    return render(request, 'home/event.html', context)
+
+
+def gallery(request):
+    return render(request, 'home/gallery.html')

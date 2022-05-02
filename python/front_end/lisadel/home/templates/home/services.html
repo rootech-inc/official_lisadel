@@ -8,127 +8,28 @@
             <div class="container mt-2">
                 <div class="row mb-5">
 
-                    <div class="col-sm-4 p-2">
-                        <div class="w-100 custom_shadow bg-white">
+                    {% for service in all_services %}
+                        <div class="col-sm-4 p-2">
+                            <div class="w-100 custom_shadow bg-white">
 
-                            <!-- IMAGE -->
-                            <img
-                                    src="{% static 'home/asssets/events/test/img.png' %}"
-                                    alt=""
-                                    class="img-fluid"
-                            >
-                            <div class="p-2 d-flex flex-wrap align-content-center">
-                                <div class="w-75">
-                                    <p class="m-0">Service Name</p>
+                                <!-- IMAGE -->
+                                <img
+                                        src="{% static 'home/asssets/events/test/img.png' %}"
+                                        alt=""
+                                        class="img-fluid"
+                                >
+                                <div class="p-2 d-flex flex-wrap align-content-center">
+                                    <div class="w-75">
+                                        <p class="m-0">{{ service.title }}</p>
+                                    </div>
+                                    <div class="w-25 text-right">
+                                        <p class="m-0"><a href="{% url 'service' service.url_parse %}"><i class="fa fa-arrow-right text-success"></i></a></p>
+                                    </div>
                                 </div>
-                                <div class="w-25 text-right">
-                                    <p class="m-0"><a href="{% url 'service' 'hello-world' %}"><i class="fa fa-arrow-right text-success"></i></a></p>
+
                                 </div>
-                            </div>
-
-                            </div>
-                    </div>
-                    <div class="col-sm-4 p-2">
-                        <div class="w-100 bg-white custom_shadow">
-
-                            <!-- IMAGE -->
-                            <img
-                                    src="{% static 'home/asssets/events/test/img_1.png' %}"
-                                    alt=""
-                                    class="img-fluid"
-                            >
-                            <div class="p-2 d-flex flex-wrap align-content-center">
-                                <div class="w-75">
-                                    <p class="m-0">Service Name</p>
-                                </div>
-                                <div class="w-25 text-right">
-                                    <p class="m-0"><a href="#"><i class="fa fa-arrow-right text-success"></i></a></p>
-                                </div>
-                            </div>
-
-                            </div>
-                    </div>
-                    <div class="col-sm-4 p-2">
-                        <div class="w-100 bg-white custom_shadow">
-
-                            <!-- IMAGE -->
-                            <img
-                                    src="{% static 'home/asssets/events/test/img_2.png' %}"
-                                    alt=""
-                                    class="img-fluid"
-                            >
-                            <div class="p-2 d-flex flex-wrap align-content-center">
-                                <div class="w-75">
-                                    <p class="m-0">Service Name</p>
-                                </div>
-                                <div class="w-25 text-right">
-                                    <p class="m-0"><a href="#"><i class="fa fa-arrow-right text-success"></i></a></p>
-                                </div>
-                            </div>
-
-                            </div>
-                    </div>
-                    <div class="col-sm-4 p-2">
-                        <div class="w-100 bg-white custom_shadow">
-
-                            <!-- IMAGE -->
-                            <img
-                                    src="{% static 'home/asssets/events/test/img_3.png' %}"
-                                    alt=""
-                                    class="img-fluid"
-                            >
-                            <div class="p-2 d-flex flex-wrap align-content-center">
-                                <div class="w-75">
-                                    <p class="m-0">Service Name</p>
-                                </div>
-                                <div class="w-25 text-right">
-                                    <p class="m-0"><a href="#"><i class="fa fa-arrow-right text-success"></i></a></p>
-                                </div>
-                            </div>
-
-                            </div>
-                    </div>
-                    <div class="col-sm-4 p-2">
-                        <div class="w-100 bg-white custom_shadow">
-
-                            <!-- IMAGE -->
-                            <img
-                                    src="{% static 'home/asssets/events/test/img_4.png' %}"
-                                    alt=""
-                                    class="img-fluid"
-                            >
-                            <div class="p-2 d-flex flex-wrap align-content-center">
-                                <div class="w-75">
-                                    <p class="m-0">Service Name</p>
-                                </div>
-                                <div class="w-25 text-right">
-                                    <p class="m-0"><a href="#"><i class="fa fa-arrow-right text-success"></i></a></p>
-                                </div>
-                            </div>
-
-                            </div>
-                    </div>
-                    <div class="col-sm-4 p-2">
-                        <div class="w-100 bg-white custom_shadow">
-
-                            <!-- IMAGE -->
-                            <img
-                                    src="{% static 'home/asssets/events/test/img_5.png' %}"
-                                    alt=""
-                                    class="img-fluid"
-                            >
-                            <div class="p-2 d-flex flex-wrap align-content-center">
-                                <div class="w-75">
-                                    <p class="m-0">Service Name</p>
-                                </div>
-                                <div class="w-25 text-right">
-                                    <p class="m-0"><a href="#"><i class="fa fa-arrow-right text-success"></i></a></p>
-                                </div>
-                            </div>
-
-                            </div>
-                    </div>
-
+                        </div>
+                    {% endfor %}
 
                 </div>
 

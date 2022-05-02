@@ -7,8 +7,8 @@
     <link rel="canonical" href="http://www.lisadel.com">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    {% if title %}
-        <title>Lisadel Travel and Tours | {{ title }}</title>
+    {% if page_title %}
+        <title>Lisadel Travel and Tours | {{ page_title }}</title>
     {% else %}
         <title>Lisadel Travel and Tours</title>
     {% endif %}
@@ -40,9 +40,9 @@
 <!--            </div>-->
 <!--        </div>-->
 
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+        <nav class="navbar navbar-expand-sm brand_bg_primary navbar-dark sticky-top">
             <div class="container">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{% url 'landing' %}">
                     <img src="{% static 'home/asssets/logo.png' %}" alt="" style="width: 35px" class="img-fluid"> LISADEL
                 </a>
                 <ul class="navbar-nav">
@@ -50,13 +50,13 @@
                         <a class="nav-link home_nav_item" href="{% url 'landing' %}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about_us' %}">About Us</a>
+                        <a class="nav-link home_nav_item" href="{% url 'about_us' %}">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'services' %}">Services</a>
+                        <a class="nav-link home_nav_item" href="{% url 'services' %}">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'tours' %}">Tours</a>
+                        <a class="nav-link home_nav_item" href="{% url 'tours' %}">Tours</a>
                     </li>
 <!--                    <li class="nav-item">-->
 <!--                        <div class="dropdown">-->
@@ -72,10 +72,7 @@
 
 <!--                    </li>-->
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact Us</a>
+                        <a class="nav-link home_nav_item" href="{% url 'gallery' %}">Gallery</a>
                     </li>
                 </ul>
             </div>

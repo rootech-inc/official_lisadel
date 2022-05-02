@@ -21,10 +21,12 @@ from . import views
 urlpatterns = [
     path('', views.index, name='landing'),
 
-    path('tours',views.events,name='tours'),
-    path('tour/<event>',views.event_view,name='view_event'),
+    path('tours', views.events, name='tours'),
+    path('tour/<event>', views.event_view, name='view_event'),
 
-    path('services',views.services,name='services'),
-    path('services/<service>', views.service,name='service'),
-    path('about-us',views.about_us,name='about_us'),
+    path('services', views.services, name='services'),
+    path('services/<service>', views.service, name='service'),
+
+    path('about-us', views.about_us, name='about_us'),
+    path('gallery', views.gallery, name='gallery'),
 ]
