@@ -9,59 +9,42 @@
                 <div class="row">
                     <div class="col-sm-9 bg-white p-0">
 
-                        <!-- TOP DETAILS -->
-                       <nav class="navbar navbar-expand-sm text-muted navbar-dark">
-                           <div class="w-50  h-100 d-flex flex-wrap align-content-center">
-                              <h3 class="font-weight-bolder">{{ event.title }}</h3>
-                          </div>
-                          <div class="w-50 ml-auto h-100 d-flex flex-wrap align-content-center justify-content-end text-info">
-                              {{ event.start_date }} to {{ event.end_date }}
-                          </div>
-                       </nav>
 
+                        <div class="w-100 d-flex flex-wrap align-content-center">
+                            <a href="#" class="m-2"><i data-toggle="tooltip" title="Share Via Whatsapp" class="fa fa-2x fa-whatsapp text-success"></i></a>
+                        </div>
+                        <hr>
 
                         <!-- IMAGES -->
                         <div class="w-100 p-2" style="height: 50vh">
                             <div id="demo" class="carousel slide h-100 rounded_c" data-ride="carousel">
 
                         <!-- Indicators -->
-                        <ul class="carousel-indicators">
-                            <li data-target="#demo" data-slide-to="0" class="active"></li>
-                            <li data-target="#demo" data-slide-to="1"></li>
-                            <li data-target="#demo" data-slide-to="2"></li>
-                            <li data-target="#demo" data-slide-to="3"></li>
-                            <li data-target="#demo" data-slide-to="4"></li>
-                        </ul>
+<!--                        <ul class="carousel-indicators">-->
+<!--                            <li data-target="#demo" data-slide-to="0" class="active"></li>-->
+<!--                            <li data-target="#demo" data-slide-to="1"></li>-->
+<!--                            <li data-target="#demo" data-slide-to="2"></li>-->
+<!--                            <li data-target="#demo" data-slide-to="3"></li>-->
+<!--                            <li data-target="#demo" data-slide-to="4"></li>-->
+<!--                        </ul>-->
 
                         <!-- The slideshow -->
                         <div class="carousel-inner h-100">
 
                             <!-- GALLERY -->
-                            <div class="carousel-item h-100 back_img active b" style="background: url('{% static 'home/asssets/events/test/img.png' %}')">
+                            <div class="carousel-item h-100 back_img active b" style="background: url('{% static 'home/asssets/events/' %}{{ event.tour_uni }}/cover.jpg')">
                                 <div class="w-100 h-100 d-flex  p-5 flex-wrap align-content-end justify-content-start">
                                     
                                 </div>
                             </div>
-                            <div class="carousel-item h-100 back_img b" style="background: url('{% static 'home/asssets/events/test/img_1.png' %}')">
-                                <div class="w-100 h-100 d-flex p-5 flex-wrap align-content-end justify-content-start">
-                                    
+                            {% for evg in event_gallery %}
+                                <div class="carousel-item h-100 back_img b" style="background: url('{% static 'home/asssets/events/' %}{{ event.tour_uni }}/{{ evg.media_name }}')">
+                                    <div class="w-100 h-100 d-flex p-5 flex-wrap align-content-end justify-content-start">
+
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="carousel-item h-100 back_img b" style="background: url('{% static 'home/asssets/events/test/img_2.png' %}')">
-                                <div class="w-100 h-100 d-flex p-5 flex-wrap align-content-end justify-content-start">
-                                    
-                                </div>
-                            </div>
-                            <div class="carousel-item h-100 back_img b" style="background: url('{% static 'home/asssets/events/test/img_3.png' %}')">
-                                <div class="w-100 h-100 d-flex  p-5 flex-wrap align-content-end justify-content-start">
-                                    
-                                </div>
-                            </div>
-                            <div class="carousel-item h-100 back_img b" style="background: url('{% static 'home/asssets/events/test/img_4.png' %}')">
-                                <div class="w-100 h-100 d-flex  p-5 flex-wrap align-content-end justify-content-start">
-                                    
-                                </div>
-                            </div>
+                            {% endfor %}
+
 
 
 
@@ -81,6 +64,14 @@
 
 
                         <div class="bg-white p-3">
+                            <nav class="navbar navbar-expand-sm text-muted navbar-dark">
+                               <div class="w-50  h-100 d-flex flex-wrap align-content-center">
+                                  <h4 class="font-weight-bolder">{{ event.title }}</h4>
+                              </div>
+                              <div class="w-50 ml-auto h-100 d-flex flex-wrap align-content-center justify-content-end text-info">
+                                  {{ event.start_date }} to {{ event.end_date }}
+                              </div>
+                           </nav>
                             <!-- LOCATION DETAIL -->
                             <div class="w-100 bg-light mb-2" style="height: 50vh">
                                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7216.494513923791!2d-0.14080206511232274!3d5.6978421000000035!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf8324e8721511%3A0x1edf23527518afe8!2sLakeside%20Marina%20Park!5e1!3m2!1sen!2sgh!4v1651126595811!5m2!1sen!2sgh"  style="border:0; height: 100%; width: 100%" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
@@ -88,6 +79,7 @@
 
                             <!-- DETAILS -->
                             <div class="text-muted">
+
                                 <p class="text-muted font-weight-bolder">General Information About This Tour</p>
 
                                 <!-- INTRO -->
@@ -157,6 +149,13 @@
 
                         <!-- BOOKING -->
                         <div class="w-100 card p-2 alert-info custom_shadow border-0 mb-5 rounded-0 p-2">
+                            <p class="p-0 text-muted text-center">
+                                Quick Connect
+                            </p>
+                            <div class="w-100 d-flex flex-wrap justify-content-center align-content-center">
+                                <a href="#" class="m-2"><i class="fa fa-whatsapp text-success"></i></a>
+                            </div>
+                            <hr>
                             <h4 class="text-center font-weight-bolder mb-4">
                                 Book a sit for this tourism event
                             </h4>

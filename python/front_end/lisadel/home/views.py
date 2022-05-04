@@ -63,12 +63,17 @@ def events(request):
 def event_view(request, event):
     all_tours = models.tours.objects.all()[:12]
     event = models.tours.objects.get(url_parse=event)
+    event_uni = event.tour_uni
+
+    # get gallery items
+    event_gallery = models.TourGallery.objects.filter(event=event_uni)
 
     context = {
         'event': event,
         'events': all_tours,
         'page_title': 'Tourism Events | ' + str(event.title),
-        'event_timeline': models.timeline.objects.filter(event=event.tour_uni)
+        'event_timeline': models.timeline.objects.filter(event=event.tour_uni),
+        'event_gallery':event_gallery
     }
     return render(request, 'home/event.html', context)
 

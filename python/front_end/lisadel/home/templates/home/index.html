@@ -177,17 +177,23 @@
                     <h4 class="font-weight-bold text-center m-0">GALLERY</h4>
                 </div>
                 <p class="text-muted">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Shuffle of images from our recent events
                 </p>
 
-                <div ID="ngy2p" data-nanogallery2='{"itemsBaseURL": "assets/slides/home/","thumbnailWidth": "auto","thumbnailLabel": {
+                <div ID="ngy2p" data-nanogallery2='{"itemsBaseURL": "","thumbnailWidth": "auto","thumbnailLabel": {
                           "position": "overImageOnBottom"
                         },
                         "thumbnailAlignment": "center",
                         "thumbnailOpenImage": true
                       }'>
                     {% for gall in gallery %}
-                        <a href="1.jpg" data-ngthumb="1.jpg" data-ngdesc="Kwehu">Kwehu</a>
+                        <a
+                                href="{% static  'home/asssets/events/' %}{{ gall.event }}/{{ gall.media_name }}"
+                                data-ngthumb="{% static  'home/asssets/events/' %}{{ gall.event }}/thumbs/{{ gall.media_name }}"
+                                data-ngdesc="Kwehu"
+                        >
+                            Kwehu
+                        </a>
                     {% endfor %}
 
 
