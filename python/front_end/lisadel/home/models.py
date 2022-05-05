@@ -73,3 +73,29 @@ class timeline(models.Model):
 
     def __str__(self):
         return self.event + ' - ' + self.details
+
+
+# bookings
+class EventBooking(models.Model):
+    client_name = models.TextField()
+    event = models.TextField()
+    phone_number = models.TextField()
+    email_address = models.TextField()
+    booking_package = models.TextField()
+    payment = models.TextField()
+    sits = models.TextField()
+    special_request = models.TextField()
+    country = models.TextField()
+    region = models.TextField()
+    city = models.TextField()
+    loc = models.TextField()
+
+
+# event packages
+class TourPackage(models.Model):
+    event = models.TextField()
+    description = models.TextField()
+    cost = models.TextField()
+
+    def __str__(self):
+        return self.event + ' - ' + self.cost

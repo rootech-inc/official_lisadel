@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-)qti!fluf0gd$wjqed9dev&sm5r1-l8uo(h761m687r94glm0y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -69,6 +69,13 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'lisadel.wsgi.application'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'henrychase411@gmail.com'
+EMAIL_HOST_PASSWORD = 'ldthggpiaisgfwdg'
+EMAIL_PORT = 587
 
 
 # Database
