@@ -63,6 +63,7 @@ def events(request):
 
 # view single event
 def event_view(request, event):
+
     all_tours = models.tours.objects.all()[:12]
     try:
         event = models.tours.objects.get(url_parse=event)
@@ -123,6 +124,65 @@ def book_event(request):
         sender = 'robot'
         recipients = ['rootbackup10@gmail.com']
         if send_mail(subject, message, sender, recipients, fail_silently=False):
+            book.save()
+            return render(request, 'home/booing_successful.html')
+        else:
+            return Http404
+
+        return HttpResponse(request)
+    else:
+        return HttpResponse("Form should be posted")
+
+
+def visa_consultation(request):
+    return render(request, 'home/visa_consultation.html')
+
+
+def visa_bokk(request):
+    if request.method == 'POST':
+        full_name = request.POST['full_name']
+        country = request.POST['country']
+        city = request.POST['city']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        visa_type = request.POST['visa_type']
+
+        # insert into database
+        book = models.EventBooking(
+            client_name=full_name,
+            email_address=email,
+            phone_number=phone,
+            sits=1,
+            booking_package=visa_type,
+            event='visa_booking',
+            country=country,
+            city=city
+        )
+
+        message = "<style>table, th, td {border: 1px solid black;border-collapse: collapse;}</style>" \
+                  "<table style='border: 1px solid black;border-collapse: collapse;'>" \
+                  "<tr>" \
+                  "<th style='border: 1px solid black;border-collapse: collapse;'>Full Name</th>" \
+                  "<th style='border: 1px solid black;border-collapse: collapse;'>Email Address</th>" \
+                  "<th style='border: 1px solid black;border-collapse: collapse;'>Phone Number<th>" \
+                  "<th style='border: 1px solid black;border-collapse: collapse;'>Country</th>" \
+                  "<th style='border: 1px solid black;border-collapse: collapse;'>City</th>" \
+                  "<th style='border: 1px solid black;border-collapse: collapse;'>Visa Type</th>" \
+                  "</tr>" \
+                  "<tr>" \
+                  "<td style='border: 1px solid black;border-collapse: collapse;'>"+str(full_name)+"</td>" \
+                  "<td style='border: 1px solid black;border-collapse: collapse;'>"+str(email)+"</td>" \
+                  "<td style='border: 1px solid black;border-collapse: collapse;'>"+str(phone)+"<td>" \
+                  "<td style='border: 1px solid black;border-collapse: collapse;'>"+str(country)+"</td>" \
+                  "<td style='border: 1px solid black;border-collapse: collapse;'>"+str(city)+"</td>" \
+                  "<td style='border: 1px solid black;border-collapse: collapse;'>"+str(visa_type)+"</td>" \
+                  "</tr>"\
+                  "</tr>" \
+                  "</table>"
+        subject = 'Visa Consultation : ' + visa_type
+        sender = 'robot'
+        recipients = ['rootbackup10@gmail.com']
+        if send_mail(subject, message, sender, recipients,html_message=message, fail_silently=False):
             book.save()
             return render(request, 'home/booing_successful.html')
         else:

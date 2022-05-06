@@ -29,6 +29,9 @@ urlpatterns = [
     path('services', views.services, name='services'),
     path('services/<service>', views.service, name='service'),
 
+    path('visa-consultation',views.visa_consultation,name='visa_consultation'),
+    path('visa-book',views.visa_bokk,name='visa_bokk'),
+
     path('about-us', views.about_us, name='about_us'),
     path('gallery', views.gallery, name='gallery'),
 ]

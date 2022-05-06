@@ -48,7 +48,7 @@
                                         <p class="w-50">
                                             We hire the best tour agents and travel specialist to being you the top-notch tours, excursions and unmatched experience.
                                         </p>
-                                        <a href="#" class="btn btn-info">Packages</a>
+                                        <a href="{% url 'tours' %}" class="btn btn-info">Packages</a>
                                     </div>
                                 </div>
                             </div>
@@ -59,7 +59,7 @@
                                     <div class="text-center">
                                         <h2 class="page-title">AFFORDABLE AND RELIABLE FLIGHTS</h2>
                                         <h5 class="page-description">Let's Make Your Best Trip Ever</h5>
-                                        <a href="#" class="btn btn-info">CONSULTANT</a>
+                                        <a href="{% url 'about_us' %}" class="btn btn-info">CONSULTANT</a>
                                     </div>
                                 </div>
                             </div>
@@ -75,7 +75,7 @@
                                         <p class="w-50">
                                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi cum cupiditate delectus doloremque earum esse.
                                         </p>
-                                        <a href="#" class="btn btn-info">CONSULTANT</a>
+                                        <a href="{% url 'visa_consultation' %}" class="btn btn-info">CONSULTANT</a>
                                     </div>
                                 </div>
                             </div>
@@ -131,8 +131,10 @@
                             </div>
 
                             <div class="card-body">
-                                <p class="font-weight-bold">Lorem ipsum</p>
-                                <p class="text-muted m-0 p-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                                <p class="font-weight-bold">{{ event.title }}</p>
+                                <p class="text-muted m-0 p-0 text-muted text_sm">
+                                        {{ event.overview|safe|slice:":40"}}
+                                    </p>
                             </div>
 
                         </div>

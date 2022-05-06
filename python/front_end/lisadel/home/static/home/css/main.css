@@ -124,6 +124,20 @@ text_sm
     border-bottom: 5px solid #F30B0B !important;
 }
 
+.text_sm
+{
+    font-size: small;
+}
+
+.ellipse_2_lines
+{
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .last_min_tours
 {
     height: 50px;

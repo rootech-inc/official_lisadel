@@ -1,0 +1,93 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block body %}
+    <div class="jumbotron p-0" style="height: 50vh">
+        <div class="w-100 h-100 bg_trans_50 d-flex flex-wrap align-content-center justify-content-center">
+            <h1 class="font-weight-bold">Visa Consultation</h1>
+        </div>
+    </div>
+
+    <div class="container pb-2">
+        <div class="row d-flex flex-wrap justify-content-center">
+            <div class="col-sm-6">
+                <h5 class="font-weight-bold">Visa Consultation Includes:</h5>
+                <ol>
+                    <li>Appointment Booking</li>
+                    <li>Assistance in filling the application form.</li>
+                    <li>Careful and critical examination of supporting documents .</li>
+                    <li>Booking of hotels.</li>
+                    <li>FLight itinerary reservation.</li>
+                    <li>Travel insurance bookings if required.</li>
+                    <li>Advice in interview where applicable.</li>
+                    <li>Tour itinerary.</li>
+                </ol>
+                <h5 class="font-weight-bold">Note that, Visa Consultation Excludes:</h5>
+                <ol>
+                    <li>Travel Insurance.</li>
+                    <li>Visa application fees.</li>
+                    <li>Application Center fees</li>
+                </ol>
+            </div>
+            <div class="col-sm-6" id="visa_box">
+                <p class="text-center">
+                    Fill in the form below to book a consulting session with us.
+                </p>
+                <form action="{% url 'visa_bokk' %}" method="post" class="was-validated">
+                    <input type="hidden" name="function" value="visa_consultant">
+                    <!-- FULL NAME -->
+                    <div class="form-group">
+                        <label for="full_name">Full Name:</label>
+                        <input autocomplete="off" type="text" class="form-control rounded-0" id="full_name" placeholder="Full Name" name="full_name" required>
+
+                    </div>
+                    {% csrf_token %}
+
+                    <!-- COUNTRY CITY -->
+                    <div class="form-group">
+                        <label for="country">Country:</label>
+                        <input autocomplete="off" type="text" class="form-control rounded-0" id="country" placeholder="Country" name="country" required>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="city">City:</label>
+                        <input autocomplete="off" type="text" class="form-control rounded-0" id="city" placeholder="City" name="city" required>
+
+                    </div>
+
+                    <!-- EMAIL -->
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input autocomplete="off" type="email" class="form-control rounded-0" id="email" placeholder="" name="email" required>
+
+                    </div>
+
+                    <!-- PHONE -->
+                    <div class="form-group">
+                        <label for="phone">Phone:</label>
+                        <input autocomplete="off" type="tel" class="form-control rounded-0" id="phone" placeholder="" name="phone" required>
+
+                    </div>
+
+
+    <!--                 VISA TYPE -->
+                    <div class="form-group">
+                        <label for="visa_type">Visa Type:</label>
+                        <select name="visa_type" id="visa_type" class="form-control rounded-0">
+                            <option value="European">European</option>
+                            <option value="USA">USA</option>
+                            <option value="Canada">Canada</option>
+                            <option value="Sheigen">Sheigen</option>
+                            <option value="South Africa">South Africa</option>
+                            <option value="Others">Others</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">BOOK</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

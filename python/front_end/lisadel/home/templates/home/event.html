@@ -1,5 +1,6 @@
 {% extends 'home/base.html' %}
 {% load static %}
+{% load bleach_tags %}
 
 {% block body %}
 
@@ -83,8 +84,8 @@
                                 <p class="text-muted font-weight-bolder">General Information About This Tour</p>
 
                                 <!-- INTRO -->
-                                <small class="text-muted">
-                                    {{ event.overview | striptags | safe}}
+                                <small>
+                                    {{ event.overview|safe}}
                                 </small>
 
                                 {% for timeline in event_timeline  %}
@@ -99,36 +100,40 @@
                             <!-- MINI DETAILS AND BOOK -->
                             <div class="w-100 bg-light p-3 row no-gutters">
                                 <!-- TABLE -->
-                                <div class="col-sm-4 bg-white">
+                                <div class="col-sm-8 bg-white">
                                     <table class="table table-sm">
                                         <tb>
                                             <tr>
                                                 <td class="text-primary"><small>LOCATION : </small></td>
-                                                <td><small class="text-muted">ACCRA,GHANA</small></td>
+                                                <td><small class="text-muted">{{event.country}},{{event.city}}</small></td>
                                             </tr>
                                             <!--DURATION-->
                                             <tr>
                                                 <td class="text-primary"><small>DURATION : </small></td>
-                                                <td><small class="text-muted">1 DAY</small></td>
+                                                <td><small class="text-muted">{{event.days}}</small></td>
                                             </tr>
                                             <!-- SITS -->
                                             <tr>
                                                 <td class="text-primary"><small>AVAILABLE SEATS : </small></td>
-                                                <td><small class="text-muted">120</small></td>
+                                                <td><small class="text-muted">{{event.group_size}}</small></td>
                                             </tr>
                                             <!-- PRICE -->
                                             <tr>
                                                 <td class="text-primary"><small>PRICE : </small></td>
-                                                <td><small class="text-muted">$100</small></td>
+                                                <td><small class="text-muted">
+                                                    {% for pack in event_packs %}
+                                                        <span class="text-info">{{pack.description}}</span> - <span class="text-success">{{pack.cost}}</span> ,
+                                                    {% endfor %}
+                                                </small></td>
                                             </tr>
                                         </tb>
                                     </table>
                                 </div>
 
                                 <!-- BOOK -->
-                                <div class="col-sm-8 pl-2">
+                                <div class="col-sm-4 pl-2">
                                     <div class="border-0 text-muted card p-2 h-100 rounded-0">
-                                        <button class="btn btn-success w-100 h-100">BOOK</button>
+                                        <button onclick="location.href='#book_tour'" class="btn btn-success w-100 h-100">BOOK</button>
                                     </div>
                                 </div>
                             </div>
@@ -149,7 +154,7 @@
 
                         <!-- BOOKING -->
                         <form method="post" action="{% url 'book_event' %}" class="w-100 card p-2 alert-info custom_shadow border-0 mb-5 rounded-0 p-2">
-                            <p class="p-0 text-muted text-center">
+                            <p id="book_tour" class="p-0 text-muted text-center">
                                 Quick Connect
                             </p>
                             <input type="hidden" name="event" value="{{ event.tour_uni }}">
@@ -176,11 +181,11 @@
                                 {% for pack in event_packs %}
                                     <div class="form-check bg-light m-1 mb-2">
                                       <label class="form-check-label p-1">
-                                        <input type="radio" value="package 1" class="form-check-input" name="package">Package 1
+                                        <input type="radio" value="package 1" class="form-check-input" name="package"> {{ pack.description }} - ${{ pack.cost }}
                                       </label>
                                     </div>
                                 {% endfor %}
-                                
+
 
                             </div>
 
