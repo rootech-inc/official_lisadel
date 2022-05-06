@@ -12,44 +12,33 @@
                         <div class="w-100 p-2" style="height: 50vh">
                             <div id="demo" class="carousel slide h-100 rounded_c" data-ride="carousel">
 
-                        <!-- Indicators -->
-                        <ul class="carousel-indicators">
-                            <li data-target="#demo" data-slide-to="0" class="active"></li>
-                            <li data-target="#demo" data-slide-to="1"></li>
-                            <li data-target="#demo" data-slide-to="2"></li>
-                            <li data-target="#demo" data-slide-to="3"></li>
-                            <li data-target="#demo" data-slide-to="4"></li>
-                        </ul>
+
 
                         <!-- The slideshow -->
                         <div class="carousel-inner h-100">
 
                             <!-- GALLERY -->
-                            <div class="carousel-item h-100 back_img active b" style="background: url('{% static 'home/asssets/events/test/img.png' %}')">
-                                <div class="w-100 h-100 d-flex  p-5 flex-wrap align-content-end justify-content-start">
-                                    
+                            <div class="carousel-item h-100 back_img active b" style="background: url('{% static 'home/asssets/services/' %}{{service.img}}')">
+                                <div class="w-100 h-100 d-flex bg_trans_80  p-5 flex-wrap align-content-center justify-content-center">
+                                    <h4 class="font-weight-bolder">{{ service.title }}</h4>
                                 </div>
                             </div>
-                            <div class="carousel-item h-100 back_img b" style="background: url('{% static 'home/asssets/events/test/img_1.png' %}')">
-                                <div class="w-100 h-100 d-flex p-5 flex-wrap align-content-end justify-content-start">
-                                    
+                            {% for serv in all_services %}
+                                <div class="carousel-item h-100 back_img b" style="background: url('{% static 'home/asssets/services/' %}{{serv.img}}')">
+                                    <div class="w-100 h-100 d-flex bg_trans_80  p-5 flex-wrap align-content-center justify-content-center">
+                                        <div class="w-75">
+                                            <strong class="mb-2 text-warning">{{serv.title}}</strong>
+                                            <p class="ellipse_2_lines">
+                                                {{serv.description}}
+                                            </p>
+                                            <a href="" class="mb-2 text-info">Read More</a>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="carousel-item h-100 back_img b" style="background: url('{% static 'home/asssets/events/test/img_2.png' %}')">
-                                <div class="w-100 h-100 d-flex p-5 flex-wrap align-content-end justify-content-start">
-                                    
-                                </div>
-                            </div>
-                            <div class="carousel-item h-100 back_img b" style="background: url('{% static 'home/asssets/events/test/img_3.png' %}')">
-                                <div class="w-100 h-100 d-flex  p-5 flex-wrap align-content-end justify-content-start">
-                                    
-                                </div>
-                            </div>
-                            <div class="carousel-item h-100 back_img b" style="background: url('{% static 'home/asssets/events/test/img_4.png' %}')">
-                                <div class="w-100 h-100 d-flex  p-5 flex-wrap align-content-end justify-content-start">
-                                    
-                                </div>
-                            </div>
+                            {% endfor %}
+
+
+
 
 
 
@@ -94,7 +83,7 @@
 
                                             <!-- IMAGE -->
                                             <img
-                                                    src="{% static 'home/asssets/events/test/img.png' %}"
+                                                    src="{% static 'home/asssets/services/' %}{{serv.img}}"
                                                     alt=""
                                                     class="img-fluid"
                                             >
