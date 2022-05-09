@@ -50,6 +50,40 @@ def service(request, service):
     return render(request, 'home/service.html', context)
 
 
+# service booking
+def service_booking(request):
+    if request.method == "POST":
+        # get form details
+        form = request.POST
+        full_name = form['full_name']
+        email = form['email']
+        phone = form['phone']
+        message = form['message']
+        service_x = form['service']
+
+        email_message = "<strong>Client</strong> : " + str(full_name) + " <br>" \
+                                                                        "<strong>Phone</strong>  : " + str(
+            phone) + " <br>" \
+                     "<strong>Email</strong>  : " + str(email) + " <br> " \
+                                                                 "<strong>Message</strong>  : " + str(message) + " "
+
+        contact = models.contact_us(client_name=full_name, phone_number=phone, email_address=email, message=message)
+
+        subject = 'Service Consultation : ' + service_x
+        sender = 'robot'
+        recipients = ['rootbackup10@gmail.com']
+        if send_mail(subject, email_message, sender, recipients, html_message=email_message, fail_silently=False):
+            contact.save()
+            return render(request, 'home/booing_successful.html')
+        else:
+            return Http404
+
+        return HttpResponse(email_message)
+    else:
+        pass
+        # invalid form
+
+
 # events
 def events(request):
     all_tours = models.tours.objects.all()[:12]
@@ -63,7 +97,6 @@ def events(request):
 
 # view single event
 def event_view(request, event):
-
     all_tours = models.tours.objects.all()[:12]
     try:
         event = models.tours.objects.get(url_parse=event)
@@ -138,6 +171,7 @@ def visa_consultation(request):
     return render(request, 'home/visa_consultation.html')
 
 
+## visa booking
 def visa_bokk(request):
     if request.method == 'POST':
         full_name = request.POST['full_name']
@@ -170,19 +204,22 @@ def visa_bokk(request):
                   "<th style='border: 1px solid black;border-collapse: collapse;'>Visa Type</th>" \
                   "</tr>" \
                   "<tr>" \
-                  "<td style='border: 1px solid black;border-collapse: collapse;'>"+str(full_name)+"</td>" \
-                  "<td style='border: 1px solid black;border-collapse: collapse;'>"+str(email)+"</td>" \
-                  "<td style='border: 1px solid black;border-collapse: collapse;'>"+str(phone)+"<td>" \
-                  "<td style='border: 1px solid black;border-collapse: collapse;'>"+str(country)+"</td>" \
-                  "<td style='border: 1px solid black;border-collapse: collapse;'>"+str(city)+"</td>" \
-                  "<td style='border: 1px solid black;border-collapse: collapse;'>"+str(visa_type)+"</td>" \
-                  "</tr>"\
-                  "</tr>" \
-                  "</table>"
+                  "<td style='border: 1px solid black;border-collapse: collapse;'>" + str(full_name) + "</td>" \
+                                                                                                       "<td style='border: 1px solid black;border-collapse: collapse;'>" + str(
+            email) + "</td>" \
+                     "<td style='border: 1px solid black;border-collapse: collapse;'>" + str(phone) + "<td>" \
+                                                                                                      "<td style='border: 1px solid black;border-collapse: collapse;'>" + str(
+            country) + "</td>" \
+                       "<td style='border: 1px solid black;border-collapse: collapse;'>" + str(city) + "</td>" \
+                                                                                                       "<td style='border: 1px solid black;border-collapse: collapse;'>" + str(
+            visa_type) + "</td>" \
+                         "</tr>" \
+                         "</tr>" \
+                         "</table>"
         subject = 'Visa Consultation : ' + visa_type
         sender = 'robot'
         recipients = ['rootbackup10@gmail.com']
-        if send_mail(subject, message, sender, recipients,html_message=message, fail_silently=False):
+        if send_mail(subject, message, sender, recipients, html_message=message, fail_silently=False):
             book.save()
             return render(request, 'home/booing_successful.html')
         else:

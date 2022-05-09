@@ -102,3 +102,11 @@ class TourPackage(models.Model):
 
     def __str__(self):
         return self.event + ' - ' + self.cost
+
+
+# contact us
+class contact_us(models.Model):
+    client_name = models.TextField()
+    phone_number = models.TextField()
+    email_address = models.TextField()
+    message = models.TextField()

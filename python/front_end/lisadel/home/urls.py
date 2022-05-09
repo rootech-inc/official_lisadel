@@ -24,15 +24,15 @@ urlpatterns = [
 
     path('tours', views.events, name='tours'),
     path('tour/<event>', views.event_view, name='view_event'),
-    path('book-event',views.book_event, name='book_event'),
+    path('book-event', views.book_event, name='book_event'),
 
     path('services', views.services, name='services'),
     path('services/<service>', views.service, name='service'),
+    path('service-consultation', views.service_booking, name='service_consultation'),
 
-    path('visa-consultation',views.visa_consultation,name='visa_consultation'),
-    path('visa-book',views.visa_bokk,name='visa_bokk'),
+    path('visa-consultation', views.visa_consultation, name='visa_consultation'),
+    path('visa-book', views.visa_bokk, name='visa_bokk'),
 
     path('about-us', views.about_us, name='about_us'),
     path('gallery', views.gallery, name='gallery'),
 ]
-

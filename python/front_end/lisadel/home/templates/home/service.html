@@ -118,10 +118,12 @@
                     <div class="col-sm-3">
 
                         <!-- BOOKING -->
-                        <div class="w-100 card p-2 alert-info custom_shadow border-0 mb-5 rounded-0 p-2">
+                        <form method="post" action="{% url 'service_consultation' %}"  class="w-100 card p-2 alert-info custom_shadow border-0 mb-5 rounded-0 p-2">
                             <h4 class="text-center font-weight-bolder mb-4">
                                 Contact Us
                             </h4>
+                            <input type="hidden" name="service" value="{{service.title}}">
+                            {% csrf_token %}
                             <p class="p-0 text-muted text-center">
                                 Fill out this form
                             </p>
@@ -134,9 +136,9 @@
                             </small>
                             <div class="p-1">
 
-                                <input type="text" placeholder="Your Name" required class="form-control mb-2 rounded-0">
-                                <input type="email" placeholder="Email" required class="form-control mb-2 rounded-0">
-                                <input type="tel" placeholder="Contact Number" required class="form-control mb-2 rounded-0">
+                                <input type="text" autocomplete="off" name="full_name" placeholder="Your Name" required class="form-control mb-2 rounded-0">
+                                <input type="email"autocomplete="off" name="email" placeholder="Email" required class="form-control mb-2 rounded-0">
+                                <input type="tel" autocomplete="off" name="phone" placeholder="Contact Number" required class="form-control mb-2 rounded-0">
 
                             </div>
 
@@ -145,7 +147,7 @@
                             </small>
                             <div class="p-1">
 
-                                <textarea placeholder="Message" class="form-control rounded-0" rows="5"></textarea>
+                                <textarea autocomplete="off" name="message" placeholder="Message" class="form-control rounded-0" rows="5"></textarea>
 
                             </div>
 
@@ -155,7 +157,7 @@
 
 
 
-                        </div>
+                        </form>
 
                         <!-- OTHER EVENTS -->
                         <div class="w-100 card p-2 custom_shadow border-0 mb-5 rounded-0 p-2">
